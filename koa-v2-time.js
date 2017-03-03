@@ -5,11 +5,11 @@
 'use strict';
 
 function time(options) {
-    return function (ctx, next) {
-        console.time(this.req.url);
+    return async function (ctx, next) {
+        console.time(ctx.req.url);
         ctx.res.once('finish', function () {
-            console.timeEnd(this.req.url);
-        }.bind(this));
+            console.timeEnd(ctx.req.url);
+        });
         await next();
     }
 }

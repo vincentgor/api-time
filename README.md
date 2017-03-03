@@ -16,5 +16,5 @@ app.use(koa_time.time())
 ## koa-v2
 ```js
 const koa_time = require('koa-v2-time')
-app.use(async koa_time.time())
+app.use(koa_time.time())
 ```
